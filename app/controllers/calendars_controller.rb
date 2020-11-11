@@ -15,7 +15,8 @@ class CalendarsController < ApplicationController
   private
 
   def plan_params
-    params.require(:calendars).permit(:date, :plan)
+    #planに変えるとDBには保存できる(入力されたものはplanクラスに保存される)
+    params.require(:plan).permit(:date, :plan)
   end
 
   def getWeek
