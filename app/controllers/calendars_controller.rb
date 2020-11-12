@@ -34,7 +34,7 @@ class CalendarsController < ApplicationController
       today_plans = []
       plan = plans.map do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
-      end
+      end # 修正箇所　出す前は enになってた
       days = { month: (@todays_date + x).month, date: (@todays_date + x).day, wday: wdays[(@todays_date + x).wday], plans: today_plans}
       @week_days.push(days)
     end
